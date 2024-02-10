@@ -75,6 +75,8 @@ struct CustomSlider: View {
         let bottomAndLeadingExcessOffset = dragOffset < 0 ? (dragOffset * 0.15) : dragOffset
         let progress = (dragOffset > orientationSize ? topAndTrailingExcessOffset : bottomAndLeadingExcessOffset) / orientationSize
         self.progress = progress
+        self.sliderProgress = progress
+
     }
     
     ///Symbol Config
