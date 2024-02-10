@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    // @State private var progess: CGFloat = .zero
-    // @State private var axis: CustomSlider.SliderAxis = .vertical
-        @State private var screenColor: Color = .yellow // Default color
-        @State private var brightness: Double = UIScreen.main.brightness // Use the current screen brightness
+        @State private var screenColor: Color = .yellow
+        @State private var brightness: Double = UIScreen.main.brightness
         @State private var sliderProgress: CGFloat = CGFloat(UIScreen.main.brightness)
-
+        
     var body: some View {
 
-        let uiColor = UIColor(screenColor) // Convert SwiftUI Color to UIColor
-        let adjustedColor = uiColor.adjusted(brightness: 1.3, saturation: 1) // Adjust brightness and saturation
+        let uiColor = UIColor(screenColor)
+        let adjustedColor = uiColor.adjusted(brightness: 1.3, saturation: 1)
         let adjustedSwiftUIColor = Color(adjustedColor)
         
         VStack {
@@ -36,47 +33,22 @@ struct ContentView: View {
             .onChange(of: sliderProgress) { newValue in
                 UIScreen.main.brightness = CGFloat(newValue)
             }
-            .frame(width: 150, height: 350)
-            
+            .frame(width: 120, height: 300)
+
+            // CustomColorSpectrumView(selectedColor: $screenColor)
+            //     .padding()
+                    
             ColorPicker("", selection: $screenColor)
                 .padding()
-            
-            // Slider(value: Binding(
-            //     get: { self.brightness },
-            //     set: { newValue in
-            //         self.brightness = newValue
-            //         UIScreen.main.brightness = CGFloat(newValue)
-            //     }
-            // ), in: 0...1, step: 0.01)
-            // .padding()
+                .frame(width: 0, height: 50)
+
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(screenColor)
         .edgesIgnoringSafeArea(.all)
         
     }
-        // NavigationStack {
-        //     VStack{
-                
-        //         CustomSlider(
-        //             sliderProgress: $progess,
-        //             symbol: .init(
-        //                 icon: "airpodspro",
-        //                 tint: .gray,
-        //                 font: .system(size: 25),
-        //                 padding: 20
-        //             ),
-        //             axis: .vertical,
-        //             tint: .white
-        //         )
-        //         .frame(width: 120, height: 300)
-        //         .frame(maxHeight: .infinity)
-        //     }
-        //     .padding()
-        //     .frame(maxWidth: .infinity, alignment: .top)
-        //     .background(.fill)
-        // }
-    }
+}
     
 extension UIColor {
     func adjusted(brightness: CGFloat, saturation: CGFloat) -> UIColor {
