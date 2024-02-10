@@ -59,8 +59,6 @@
 				F3B9071A2B77034500DCC233 /* Utilities */,
 				F3B9070B2B7702A700DCC233 /* NightlightApp.swift */,
 				F3B9070D2B7702A700DCC233 /* ContentView.swift */,
-				F3B9071D2B771A2800DCC233 /* NightlightMvp.swift */,
-				F3B9071B2B7711B800DCC233 /* CustomSlider.swift */,
 				F3B9070F2B7702A800DCC233 /* Assets.xcassets */,
 				F3B907112B7702A800DCC233 /* Preview Content */,
 			);
@@ -78,6 +76,8 @@
 		F3B907192B77033C00DCC233 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F3B9071F2B7734CE00DCC233 /* Components */,
+				F3B9071D2B771A2800DCC233 /* NightlightMvp.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -87,6 +87,14 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F3B9071F2B7734CE00DCC233 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F3B9071B2B7711B800DCC233 /* CustomSlider.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

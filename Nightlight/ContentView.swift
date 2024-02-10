@@ -14,14 +14,6 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             VStack{
-//                Picker("", selection: $axis) {
-//                    Text("vert")
-//                        .tag(CustomSlider.SliderAxis.vertical)
-//                    Text("hori")
-//                        .tag(CustomSlider.SliderAxis.horizontal)
-//
-//                }
-//                .pickerStyle(.segmented)
                 
                 CustomSlider(
                     sliderProgress: $progess,
